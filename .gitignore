@@ -1,0 +1,35 @@
+# Binarios y compilaciones
+build/
+build_ninja/
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+
+# Modelos
+*.gguf
+*.safetensors
+*.bin
+
+# Logs
+*.log
+logs/
+
+# Entornos
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Configuraciones locales (pueden contener rutas o credenciales)
+config.local.json
+*.local
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# backups locales
+*.backup*

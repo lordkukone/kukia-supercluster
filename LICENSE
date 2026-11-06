@@ -1,0 +1,22 @@
+Copyright © 2026 Ramón M.R. (RMR). Todos los derechos reservados.
+
+Titular: Ramón M.R. (RMR) — también conocido como LordKukone.
+Repositorio: https://github.com/lordkukone/supercluster-3gpu
+
+Este repositorio y todo su contenido (documentación, scripts, configuraciones,
+diagramas, datos y textos) son propiedad exclusiva de Ramón M.R. (RMR).
+
+CONDICIONES:
+
+1. Se permite la consulta y el estudio del contenido publicado.
+2. NO se autoriza la copia, modificación, redistribución, publicación ni uso
+   comercial, total o parcial, sin permiso expreso y por escrito del titular.
+3. NO se autoriza el uso de este material para entrenar modelos de inteligencia
+   artificial sin autorización expresa.
+4. La publicación del código no cede ningún derecho sobre él.
+5. El nombre y las referencias del titular deben conservarse íntegras.
+
+El software de terceros utilizado (llama.cpp, CMake, CUDA, etc.) mantiene sus
+propias licencias y no se ve afectado por esta.
+
+Para permisos: Ramón M.R. (RMR) — kukone510@hotmail.com — github.com/lordkukone.
