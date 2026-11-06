@@ -67,17 +67,28 @@ sin comprar una GPU de 32 GB que, aun así, tampoco lo aguantaría con contexto.
 ### Rendimiento medido
 
 ```
-Generación : 46,1 tok/s  (sostenido, 861 tokens)
-            40-46 tok/s según longitud de respuesta
+Generación : 59,1 tok/s  (con KV q4_0 y 61.440 de contexto)
+            46,1 tok/s  (con KV q8_0 y 47.104 de contexto)
 Lectura    : 49-80 tok/s según el tamaño del prompt
 Modelo     : 80B MoE (3B activos) IQ3_XXS · 28,68 GB
-Contexto   : 47.104 tokens (46K) · KV q8_0
+Contexto   : hasta 61.440 tokens (60K) con KV q4_0
 Carga      : ~45 s desde SSD
 ```
 
+#### Los dos perfiles probados
+
+| Perfil | Contexto | KV | Velocidad | VRAM |
+|---|---:|---|---:|---:|
+| **Calidad** | 47.104 | q8_0 | 46,1 tok/s | 33.612 MB |
+| **Cantidad** | **61.440** | q4_0 | **59,1 tok/s** | 33.148 MB |
+
+**El KV q4_0 no solo permite más contexto: va un 28 % más rápido** porque mueve
+la mitad de datos en cada token.
+
 > **Probado el 06/11/2026.** La clave fue poner el `--tensor-split` en el orden real
 > de dispositivos: **RPC0 primero**, luego las CUDA locales. Con el orden equivocado
-> el reparto se iba a la GPU pequeña y fallaba por OOM.
+> el reparto se iba a la GPU pequeña y fallaba por OOM, o forzaba capas a la CPU
+> y hundía la velocidad a la mitad.
 
 ### Accesible desde los 2 PCs
 ```
